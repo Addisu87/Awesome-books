@@ -37,7 +37,7 @@ function AddBook(title = titleBookInput, author = authorBookInput) {
     removeBtn();
   });
 
-    console.log(booksArr);
+  console.log(booksArr);
 }
 
 addBtn.addEventListener('click', () => {
