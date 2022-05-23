@@ -6,8 +6,6 @@ const bookForm = document.getElementsByTagName('form')[0];
 
 const addBtn = document.getElementById('add-btn');
 
-const removeBtn = document.getElementsByClassName('remove-btn');
-
 let booksArr = [];
 
 bookForm.addEventListener('submit', (event) => {
@@ -15,27 +13,33 @@ bookForm.addEventListener('submit', (event) => {
 });
 
 function removeBook() {
-  booksArr = booksArr.filter(
-    (book) => book.title !== this.parentElement.children[0].innerHTML
-  );
+  booksArr = booksArr.filter((book) => +book.id !== +this.parentElement.id);
+
+  this.parentElement.remove();
+
+  booksArr.forEach((book, i) => {
+      book.id = i;
+      bookList.children[i].id = i;
+  });
+
   console.log(booksArr);
 }
 
 function AddBook(title = titleBookInput, author = authorBookInput) {
-  booksArr.push({ title: title.value, author: author.value });
+  booksArr.push({ id: booksArr.length, title: title.value, author: author.value });
 
   const bookElement = `
-    <div class="book">
+    <div id="${booksArr.length -1}" class="book">
         <p class="book-title">${title.value}</p>
         <p class="book-author">${author.value}</p>
-        <button class="remove-btn">Remove</button>
+        <button class="remove-btn" type="button">Remove</button>
     </div>`;
 
   bookList.insertAdjacentHTML('beforeend', bookElement);
 
-  removeBtn.addEventListener('click', () => {
-    removeBtn();
-  });
+  const removeBtn = document.getElementsByClassName('remove-btn');
+
+  removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);
 
   console.log(booksArr);
 }
