@@ -8,8 +8,8 @@ let booksArr = [];
 
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-  });
+  event.preventDefault();
+});
 
 class Book {
   constructor(id, title, author) {
@@ -31,7 +31,7 @@ class Book {
     localStorage.setItem('Books', JSON.stringify(booksArr));
   }
 
-  //creat a Book
+  // create a Book
   create(id = this.id, title = this.title, author = this.author) {
     const bookElement = `
     <div id="${id}" class="book">
@@ -64,7 +64,6 @@ class Book {
     authorBookInput.value = '';
   }
 
-
   static load(bookData = JSON.parse(localStorage.getItem('Books'))) {
     if (bookData !== null) {
       bookData.forEach((book) => {
@@ -79,9 +78,9 @@ class Book {
 // Event Listeners
 addBtn.addEventListener('click', () => {
   if (titleBookInput.value !== '' && authorBookInput.value !== '') {
-      const newBook = new Book(booksArr.length, titleBookInput.value, authorBookInput.value);
-      newBook.Add();
-      Book.clearField();
+    const newBook = new Book(booksArr.length, titleBookInput.value, authorBookInput.value);
+    newBook.Add();
+    Book.clearField();
   }
 });
 
