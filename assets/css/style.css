@@ -8,7 +8,6 @@ body {
   display: block;
   flex-direction: column;
   max-width: 700px;
-  overflow: hidden;
   margin: 2rem auto;
 }
 
@@ -40,7 +39,7 @@ h2 {
   justify-content: space-between;
   align-items: baseline;
   padding: 10px;
-  border: 1px solid rgb(66, 63, 63);
+  border: 1px solid rgb(130, 117, 117);
 }
 
 .book-details {
@@ -49,7 +48,7 @@ h2 {
 }
 
 .book-title {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 24px;
   font-weight: bold;
 }
@@ -86,8 +85,4 @@ form input {
 form #add-btn {
   display: flex;
   align-self: flex-end;
-
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px;
 }
