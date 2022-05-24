@@ -50,14 +50,15 @@ function AddBook(id =  booksArr.length, title = titleBookInput, author = authorB
 function clearField() {
     titleBookInput.value = '';
     authorBookInput.value = '';
-
-    titleBookInput.focus();
 }
 
 addBtn.addEventListener('click', () => {
-   AddBook();
-   clearField();
-  console.log(booksArr);
+    if(titleBookInput.value !== '' &&
+    authorBookInput.value !== '') {
+        AddBook();
+        clearField();
+        console.log(booksArr);
+    }   
 });
 
 
