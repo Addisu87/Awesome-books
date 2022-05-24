@@ -40,7 +40,7 @@ class Book {
           <span class="by">&nbsp;by&nbsp;</span>
           <p class="book-author">${author}</p>
         </div>
-        <button class="remove-btn" type="button">Remove</button>
+        <button class="btn remove-btn" type="button">Remove</button>
     </div`;
 
     bookList.insertAdjacentHTML('beforeend', bookElement);

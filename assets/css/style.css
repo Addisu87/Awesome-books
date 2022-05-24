@@ -38,6 +38,7 @@ h2 {
 .book {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: 10px;
   border: 1px solid rgb(66, 63, 63);
 }
@@ -45,6 +46,28 @@ h2 {
 .book-details {
   display: flex;
   justify-content: space-between;
+}
+
+.book-title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.by {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+.book-author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
 }
 
 form {
@@ -63,6 +86,8 @@ form input {
 form #add-btn {
   display: flex;
   align-self: flex-end;
-  padding: 0.3rem;
-  font-size: 1rem;
+
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
 }
