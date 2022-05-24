@@ -4,6 +4,8 @@ Awesome-books
 
 > Description the project.
 
+- An application to add books with the title and author name. Also, it can remove books from the list of books.
+
 ## Built With
 
 - Major languages - JavaScript, CSS
@@ -41,11 +43,11 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: @AddisuTedla
 - LinkedIn: Addisu Tedla
 
-👤 **Author2**
+👤 **Jordan A**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Jord4N-AC](https://github.com/Jord4N-AC)
+- Twitter: [@jordan12AC](https://twitter.com/jordan12AC)
+- LinkedIn: [Camilo Armijos](https://www.linkedin.com/in/camilo-armijos-2b9648197)
 
 ## 🤝 Contributing
 
