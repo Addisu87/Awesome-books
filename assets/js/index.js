@@ -6,11 +6,6 @@ const addBtn = document.getElementById('add-btn');
 
 let booksArr = loadBooks();
 
-// Prevent Form from Submit
-bookForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-});
-
 // Remove a Book
 function removeBook() {
   booksArr = booksArr.filter((book) => +book.id !== +this.parentElement.id);
@@ -18,8 +13,8 @@ function removeBook() {
   this.parentElement.remove();
 
   booksArr.forEach((book, i) => {
-      book.id = i;
-      bookList.children[i].id = i;
+    book.id = i;
+    bookList.children[i].id = i;
   });
 
   localStorage.setItem('Books', JSON.stringify(booksArr));
@@ -27,7 +22,7 @@ function removeBook() {
 
 // Create a Book
 function createBook(id, title, author) {
-    const bookElement = `
+  const bookElement = `
     <div id="${id}" class="book">
         <p class="book-title">${title}</p>
         <p class="book-author">${author}</p>
@@ -38,44 +33,49 @@ function createBook(id, title, author) {
 
   const removeBtn = document.getElementsByClassName('remove-btn');
 
-  removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);  
+  removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);
 }
 
-// Add a Book
-function AddBook(id =  booksArr.length, title = titleBookInput, author = authorBookInput) {
-    createBook(id, title.value, author.value);
+// Load Books
+function loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
+  if (bookData !== null) {
+    bookData.forEach((book) => {
+      createBook(book.id, book.title, book.author);
+    });
+    return bookData;
+  }
+  bookData = [];
+  localStorage.setItem('Books', JSON.stringify(bookData));
+  return bookData;
+}
 
-  booksArr.push({ id: id, title: title.value, author: author.value });
+// Prevent Form from Submit
+bookForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+});
+
+// Add a Book
+function AddBook(
+  id = booksArr.length,
+  title = titleBookInput,
+  author = authorBookInput,
+) {
+  createBook(id, title.value, author.value);
+
+  booksArr.push({ id, title: title.value, author: author.value });
   localStorage.setItem('Books', JSON.stringify(booksArr));
 }
 
 // Function to clear Fields
 function clearField() {
-    titleBookInput.value = '';
-    authorBookInput.value = '';
+  titleBookInput.value = '';
+  authorBookInput.value = '';
 }
 
 // Event Listeners
 addBtn.addEventListener('click', () => {
-    if(titleBookInput.value !== '' &&
-    authorBookInput.value !== '') {
-        AddBook();
-        clearField();
-    }   
+  if (titleBookInput.value !== '' && authorBookInput.value !== '') {
+    AddBook();
+    clearField();
+  }
 });
-
-
-// Load Books
-function loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
-
-    if(bookData !== null) {
-        bookData.forEach((book) => {
-            createBook(book.id, book.title, book.author);
-        });
-        return bookData;
-    } else {
-        bookData = [];
-        localStorage.setItem('Books', JSON.stringify(bookData));
-        return bookData;
-    }
-}
