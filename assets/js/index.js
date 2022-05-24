@@ -47,8 +47,16 @@ function AddBook(id =  booksArr.length, title = titleBookInput, author = authorB
   localStorage.setItem('Books', JSON.stringify(booksArr));
 }
 
+function clearField() {
+    titleBookInput.value = '';
+    authorBookInput.value = '';
+
+    titleBookInput.focus();
+}
+
 addBtn.addEventListener('click', () => {
    AddBook();
+   clearField();
   console.log(booksArr);
 });
 
