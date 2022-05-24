@@ -6,6 +6,17 @@ const addBtn = document.getElementById('add-btn');
 
 let booksArr = [];
 
+class Book {
+    constructor(id, title, author) {
+      this.id = id;
+      this.title = title;
+      this.author = author;
+    }
+  }
+
+
+
+
 // Remove a Book
 function removeBook() {
   booksArr = booksArr.filter((book) => +book.id !== +this.parentElement.id);
@@ -60,7 +71,8 @@ function AddBook(
 ) {
   createBook(id, title.value, author.value);
 
-  booksArr.push({ id, title: title.value, author: author.value });
+  const newBook = new Book(id, title.value, author.value);
+  booksArr.push(newBook);
   localStorage.setItem('Books', JSON.stringify(booksArr));
 }
 
