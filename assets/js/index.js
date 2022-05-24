@@ -35,10 +35,13 @@ class Book {
   create(id = this.id, title = this.title, author = this.author) {
     const bookElement = `
     <div id="${id}" class="book">
-        <p class="book-title">${title}</p>
-        <p class="book-author">${author}</p>
+        <div class="book-details">
+          <p class="book-title">${title}</p>
+          <span class="by">&nbsp;by&nbsp;</span>
+          <p class="book-author">${author}</p>
+        </div>
         <button class="remove-btn" type="button">Remove</button>
-    </div>`;
+    </div`;
 
     bookList.insertAdjacentHTML('beforeend', bookElement);
 

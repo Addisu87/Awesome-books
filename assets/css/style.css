@@ -15,10 +15,23 @@ h1 {
   font-weight: 600;
 }
 
+#book-list {
+  border: 2px solid black;
+  margin: auto;
+  max-width: 700px;
+}
+
 .book {
   display: flex;
   justify-content: space-between;
-  border: 2px solid #000;
+
+  padding: 10px;
+  border: 1px solid rgb(66, 63, 63);
+}
+
+.book-details {
+  display: flex;
+  justify-content: space-between;
 }
 
 form {
