@@ -70,8 +70,8 @@ class Book {
         const newBook = new Book(book.id, book.title, book.author);
         newBook.create();
       });
+      booksArr = bookData;
     }
-    booksArr = bookData;
   }
 }
 
