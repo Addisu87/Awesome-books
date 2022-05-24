@@ -78,7 +78,11 @@ class Book {
 // Event Listeners
 addBtn.addEventListener('click', () => {
   if (titleBookInput.value !== '' && authorBookInput.value !== '') {
-    const newBook = new Book(booksArr.length, titleBookInput.value, authorBookInput.value);
+    const newBook = new Book(
+      booksArr.length,
+      titleBookInput.value,
+      authorBookInput.value
+    );
     newBook.Add();
     Book.clearField();
   }
