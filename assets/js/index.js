@@ -81,7 +81,7 @@ addBtn.addEventListener('click', () => {
     const newBook = new Book(
       booksArr.length,
       titleBookInput.value,
-      authorBookInput.value
+      authorBookInput.value,
     );
     newBook.Add();
     Book.clearField();
