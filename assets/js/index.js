@@ -4,7 +4,7 @@ const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-list');
 const addBtn = document.getElementById('add-btn');
 
-let booksArr = loadBooks();
+let booksArr = [];
 
 // Remove a Book
 function removeBook() {
@@ -42,12 +42,10 @@ function loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
     bookData.forEach((book) => {
       createBook(book.id, book.title, book.author);
     });
-    return bookData;
   }
-  bookData = [];
-  localStorage.setItem('Books', JSON.stringify(bookData));
-  return bookData;
+  booksArr = bookData;
 }
+loadBooks();
 
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
