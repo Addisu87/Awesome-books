@@ -6,6 +6,11 @@ const addBtn = document.getElementById('add-btn');
 
 let booksArr = [];
 
+// Prevent Form from Submit
+bookForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+  });
+
 class Book {
   constructor(id, title, author) {
     this.id = id;
@@ -13,21 +18,8 @@ class Book {
     this.author = author;
   }
 
-  // Add a Book
-  AddBook(
-    id = booksArr.length,
-    title = titleBookInput,
-    author = authorBookInput
-  ) {
-    createBook(id, title.value, author.value);
-
-    const newBook = new Book(id, title.value, author.value);
-    booksArr.push(newBook);
-    localStorage.setItem('Books', JSON.stringify(booksArr));
-  }
-
   // Remove a Book
-  removeBook() {
+  static remove() {
     booksArr = booksArr.filter((book) => +book.id !== +this.parentElement.id);
     this.parentElement.remove();
 
@@ -40,7 +32,7 @@ class Book {
   }
 
   //creat a Book
-  createBook(id, title, author) {
+  create(id = this.id, title = this.title, author = this.author) {
     const bookElement = `
     <div id="${id}" class="book">
         <p class="book-title">${title}</p>
@@ -52,89 +44,42 @@ class Book {
 
     const removeBtn = document.getElementsByClassName('remove-btn');
 
-    removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);
+    removeBtn[removeBtn.length - 1].addEventListener('click', Book.remove);
   }
 
-  loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
+  // Add a Book
+  Add() {
+    const newBook = new Book(this.id, this.title, this.author);
+    newBook.create();
+    booksArr.push(newBook);
+    localStorage.setItem('Books', JSON.stringify(booksArr));
+  }
+
+  // Clear Fields
+  static clearField() {
+    titleBookInput.value = '';
+    authorBookInput.value = '';
+  }
+
+
+  static load(bookData = JSON.parse(localStorage.getItem('Books'))) {
     if (bookData !== null) {
       bookData.forEach((book) => {
-        createBook(book.id, book.title, book.author);
+        const newBook = new Book(book.id, book.title, book.author);
+        newBook.create();
       });
     }
     booksArr = bookData;
   }
-  loadBooks();
-}
-
-// Remove a Book
-// function removeBook() {
-//   booksArr = booksArr.filter((book) => +book.id !== +this.parentElement.id);
-
-//   this.parentElement.remove();
-
-//   booksArr.forEach((book, i) => {
-//     book.id = i;
-//     bookList.children[i].id = i;
-//   });
-
-//   localStorage.setItem('Books', JSON.stringify(booksArr));
-// }
-
-// Create a Book
-// function createBook(id, title, author) {
-//   const bookElement = `
-//     <div id="${id}" class="book">
-//         <p class="book-title">${title}</p>
-//         <p class="book-author">${author}</p>
-//         <button class="remove-btn" type="button">Remove</button>
-//     </div>`;
-
-//   bookList.insertAdjacentHTML('beforeend', bookElement);
-
-//   const removeBtn = document.getElementsByClassName('remove-btn');
-
-//   removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);
-// }
-
-// Load Books
-// function loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
-//   if (bookData !== null) {
-//     bookData.forEach((book) => {
-//       createBook(book.id, book.title, book.author);
-//     });
-//   }
-//   booksArr = bookData;
-// }
-// loadBooks();
-
-// Prevent Form from Submit
-bookForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-});
-
-// Add a Book
-// function AddBook(
-//   id = booksArr.length,
-//   title = titleBookInput,
-//   author = authorBookInput
-// ) {
-//   createBook(id, title.value, author.value);
-
-//   const newBook = new Book(id, title.value, author.value);
-//   booksArr.push(newBook);
-//   localStorage.setItem('Books', JSON.stringify(booksArr));
-// }
-
-// Function to clear Fields
-function clearField() {
-  titleBookInput.value = '';
-  authorBookInput.value = '';
 }
 
 // Event Listeners
 addBtn.addEventListener('click', () => {
   if (titleBookInput.value !== '' && authorBookInput.value !== '') {
-    AddBook();
-    clearField();
+      const newBook = new Book(booksArr.length, titleBookInput.value, authorBookInput.value);
+      newBook.Add();
+      Book.clearField();
   }
 });
+
+Book.load();
