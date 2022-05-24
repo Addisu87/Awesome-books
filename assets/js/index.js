@@ -1,12 +1,10 @@
 const titleBookInput = document.getElementById('title-input');
 const authorBookInput = document.getElementById('author-input');
-const bookList = document.getElementById('book-list');
-
 const bookForm = document.getElementsByTagName('form')[0];
-
+const bookList = document.getElementById('book-list');
 const addBtn = document.getElementById('add-btn');
 
-let booksArr = [];
+let booksArr = loadBooks();
 
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -22,16 +20,15 @@ function removeBook() {
       bookList.children[i].id = i;
   });
 
+  localStorage.setItem('Books', JSON.stringify(booksArr));
   console.log(booksArr);
 }
 
-function AddBook(title = titleBookInput, author = authorBookInput) {
-  booksArr.push({ id: booksArr.length, title: title.value, author: author.value });
-
-  const bookElement = `
-    <div id="${booksArr.length -1}" class="book">
-        <p class="book-title">${title.value}</p>
-        <p class="book-author">${author.value}</p>
+function createBook(id, title, author) {
+    const bookElement = `
+    <div id="${id}" class="book">
+        <p class="book-title">${title}</p>
+        <p class="book-author">${author}</p>
         <button class="remove-btn" type="button">Remove</button>
     </div>`;
 
@@ -39,11 +36,33 @@ function AddBook(title = titleBookInput, author = authorBookInput) {
 
   const removeBtn = document.getElementsByClassName('remove-btn');
 
-  removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);
+  removeBtn[removeBtn.length - 1].addEventListener('click', removeBook);  
+}
 
-  console.log(booksArr);
+
+function AddBook(id =  booksArr.length, title = titleBookInput, author = authorBookInput) {
+    createBook(id, title.value, author.value);
+
+  booksArr.push({ id: id, title: title.value, author: author.value });
+  localStorage.setItem('Books', JSON.stringify(booksArr));
 }
 
 addBtn.addEventListener('click', () => {
-  AddBook();
+   AddBook();
+  console.log(booksArr);
 });
+
+
+function loadBooks(bookData = JSON.parse(localStorage.getItem('Books'))) {
+
+    if(bookData !== null) {
+        bookData.forEach((book) => {
+            createBook(book.id, book.title, book.author);
+        });
+        return bookData;
+    } else {
+        bookData = [];
+        localStorage.setItem('Books', JSON.stringify(bookData));
+        return bookData;
+    }
+}
