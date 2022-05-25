@@ -4,7 +4,6 @@ const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-list');
 const addBtn = document.getElementById('add-btn');
 
-
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
