@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header id="header">
-      <h1>Awesome books</h1>
-    </header>
+    <header id="header"></header>
 
-    <section id="book-list">
-      <!-- Content here is added from javaScript -->
-    </section>
+    <main id="main">
+      <h1>All Awesome books</h1>
+      <section id="book-list">
+        <!-- Content here is added from javaScript -->
+      </section>
 
-    <form>
-      <input
-        id="title-input"
-        type="text"
-        placeholder="Title"
-        autofocus
-        required
-      />
-      <input id="author-input" type="text" placeholder="Author" required />
-      <input id="add-btn" type="submit" value="Add" />
-    </form>
+      <form>
+        <h2>Add a new book</h2>
+        <input
+          id="title-input"
+          type="text"
+          placeholder="Title"
+          autofocus
+          required
+        />
+        <input id="author-input" type="text" placeholder="Author" required />
+        <input id="add-btn" class="btn add-btn" type="submit" value="Add" />
+      </form>
+    </main>
 
     <script src="assets/js/index.js"></script>
   </body>

@@ -1,4 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  display: block;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+#header {
+  display: flex;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#book-list {
+  border: 2px solid black;
+  margin-top: 1rem;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+}
+
+.book:nth-child(odd) {
+  background-color: rgb(218, 212, 212);
+}
+
+.book:nth-child(even) {
+  background-color: #fff;
+}
+
+.book-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.by {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+.book-author {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+form {
   display: flex;
   flex-direction: column;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+form input {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  font-size: 1rem;
+}
+
+form #add-btn {
+  display: flex;
+  align-self: flex-end;
 }
