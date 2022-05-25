@@ -9,12 +9,15 @@ const listBtn = document.getElementById('list-link');
 const addLinkBtn = document.getElementById('add-link');
 const contactBtn = document.getElementById('contact-link');
 
-
+const displayAddLink = document.getElementsByTagName('form');
 
 
 listBtn.addEventListener('click', () => {});
 
-addLinkBtn.addEventListener('click', () => {});
+addLinkBtn.addEventListener('click', () => {
+  displayAddLink.classList.add('hide');
+
+});
 
 contactBtn.addEventListener('click', () => {});
 
