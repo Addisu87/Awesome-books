@@ -40,7 +40,7 @@ a {
   text-decoration: none;
 }
 
-h1 {
+.header-1 {
   font-family: sans-serif;
   font-size: 2rem;
   font-weight: 600;
@@ -119,15 +119,22 @@ form #add-btn {
   align-self: flex-end;
 }
 
-.contact-info {
-  display: flex;
+.contact-info p,
+.contact-info ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.contact-info h2 {
+  padding: 18px 0;
 }
 
 .contact-info-list {
   display: block;
+  margin: 20px 2.5rem;
 }
 
 .contact-info-list ul li {
-  display: list-item;
+  display: list-item;  
   margin-left: 2rem;
 }
