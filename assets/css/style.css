@@ -46,7 +46,7 @@ h2 {
 }
 
 .book:nth-child(even) {
-  background-color: rgb(250, 246, 246);
+  background-color: #fff;
 }
 
 .book-details {
