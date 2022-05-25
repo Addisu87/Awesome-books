@@ -9,10 +9,35 @@ body {
   flex-direction: column;
   max-width: 700px;
   margin: 2rem auto;
+  box-sizing: border-box;
 }
 
 #header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-left: 2rem;
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-links ul li {
+  padding-right: 0.5rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -92,4 +117,17 @@ form input {
 form #add-btn {
   display: flex;
   align-self: flex-end;
+}
+
+.contact-info {
+  display: flex;
+}
+
+.contact-info-list {
+  display: block;
+}
+
+.contact-info-list ul li {
+  display: list-item;
+  margin-left: 2rem;
 }

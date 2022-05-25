@@ -4,6 +4,17 @@ const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-list');
 const addBtn = document.getElementById('add-btn');
 
+//navigation
+const listBtn = document.getElementById('list-link');
+const addLinkBtn = document.getElementById('add-link');
+const contactBtn = document.getElementById('contact-link');
+
+listBtn.addEventListener('click', () => {});
+
+addLinkBtn.addEventListener('click', () => {});
+
+contactBtn.addEventListener('click', () => {});
+
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -20,7 +31,9 @@ class Book {
 
   // Remove a Book
   static remove() {
-    Book.booksArr = Book.booksArr.filter((book) => +book.id !== +this.parentElement.id);
+    Book.booksArr = Book.booksArr.filter(
+      (book) => +book.id !== +this.parentElement.id
+    );
     this.parentElement.remove();
 
     Book.booksArr.forEach((book, i) => {
@@ -81,7 +94,7 @@ addBtn.addEventListener('click', () => {
     const newBook = new Book(
       Book.booksArr.length,
       titleBookInput.value,
-      authorBookInput.value,
+      authorBookInput.value
     );
     newBook.Add();
     Book.clearField();
