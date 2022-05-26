@@ -13,51 +13,51 @@
       <div class="nav-links">
         <nav>
           <ul>
-            <li class="nav-link"><a href="#" id="list-link"> List</a></li>
-            <li class="nav-link"><a href="#" id="add-link">Add new</a></li>
-            <li class="nav-link"><a href="#" id="contact-link">Contact</a></li>
+            <li class="nav-link"><a href="#book-section" class="nav-a" id="list-link"> List</a></li>
+            <li class="nav-link"><a href="#book-form" class="nav-a" id="add-link">Add new</a></li>
+            <li class="nav-link"><a href="#contact-info" class="nav-a" id="contact-link">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main id="main">
+    <main id="book-section" class="hide-section">
       <h1 class="header-1">All Awesome books</h1>
       <section id="book-list">
         <!-- Content here is added from javaScript -->
       </section>
-
-      <form>
-        <h2 class="header-1">Add a new book</h2>
-        <input
-          id="title-input"
-          type="text"
-          placeholder="Title"
-          autofocus
-          required
-        />
-        <input id="author-input" type="text" placeholder="Author" required />
-        <input
-          id="add-btn"
-          class="btn add-btn hide"
-          type="submit"
-          value="Add"
-        />
-      </form>
-
-      <div class="contact-info">
-        <h2 class="header-1">Contact Information</h2>
-        <p>
-          Do you have any questions or you just want to say "Hello"? <br />
-          You can reach out to us!
-        </p>
-        <ul class="contact-info-list">
-          <li>Our e-mail: mail@mail.com</li>
-          <li>Our phone number: 004358653442</li>
-          <li>Our address: Street-name 22, 84503 City, Country</li>
-        </ul>
-      </div>
     </main>
+
+    <form id="book-form" class="hide-section">
+      <h2 class="header-1">Add a new book</h2>
+      <input
+        id="title-input"
+        type="text"
+        placeholder="Title"
+        autofocus
+        required
+      />
+      <input id="author-input" type="text" placeholder="Author" required />
+      <input
+        id="add-btn"
+        class="btn add-btn hide"
+        type="submit"
+        value="Add"
+      />
+    </form>
+
+    <div id="contact-info" class="hide-section">
+      <h2 class="header-1">Contact Information</h2>
+      <p>
+        Do you have any questions or you just want to say "Hello"? <br />
+        You can reach out to us!
+      </p>
+      <ul class="contact-info-list">
+        <li>Our e-mail: mail@mail.com</li>
+        <li>Our phone number: 004358653442</li>
+        <li>Our address: Street-name 22, 84503 City, Country</li>
+      </ul>
+    </div>
 
     <footer>
       <div>

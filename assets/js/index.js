@@ -5,27 +5,14 @@ const bookList = document.getElementById('book-list');
 const addBtn = document.getElementById('add-btn');
 
 //navigation
-const listBtn = document.getElementById('list-link');
-const addLinkBtn = document.getElementById('add-link');
-const contactBtn = document.getElementById('contact-link');
-
-const displayAddLink = document.getElementsByTagName('form');
-
-
-listBtn.addEventListener('click', () => {});
-
-addLinkBtn.addEventListener('click', () => {
-  displayAddLink.classList.add('hide');
-
-});
-
-contactBtn.addEventListener('click', () => {});
+const links = document.querySelectorAll('.nav-a');
 
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
 });
 
+// Class
 class Book {
   constructor(id, title, author) {
     this.id = id;
@@ -91,7 +78,27 @@ class Book {
       });
       Book.booksArr = bookData;
     }
+    document.getElementById('list-link').click();
   }
+}
+
+{/* Single Page Application */}
+function showThisSection(link) {
+  links.forEach((lk) => {
+    if(
+      link.getAttribute('href') === lk.getAttribute('href') &&
+      !link.classList.contains('highlight-link')
+      ) {
+      document.getElementById(lk.getAttribute('href').replace('#', '')).classList.toggle('show-section');
+      lk.classList.toggle('highlight-link');
+    } else if (
+      link.getAttribute('href') !== lk.getAttribute('href') &&
+      lk.classList.contains('highlight-link')
+    ) {
+      document.getElementById(lk.getAttribute('href').replace('#', '')).classList.toggle('show-section');
+      lk.classList.toggle('highlight-link');
+    }
+  });
 }
 
 // Event Listeners
@@ -105,6 +112,13 @@ addBtn.addEventListener('click', () => {
     newBook.Add();
     Book.clearField();
   }
+});
+
+links.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    showThisSection(link);
+  });
 });
 
 Book.load();

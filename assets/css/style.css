@@ -49,6 +49,12 @@ a {
   text-decoration: none;
 }
 
+.highlight-link {
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(45, 255, 234, 0.967);
+  text-decoration: underline overline solid rgb(145, 14, 252) 5px;
+}
+
 .header-1 {
   font-family: sans-serif;
   font-size: 2rem;
@@ -106,7 +112,6 @@ a {
 }
 
 form {
-  display: flex;
   flex-direction: column;
   width: 70%;
   margin: 1rem auto;
@@ -124,30 +129,39 @@ form #add-btn {
   align-self: flex-end;
 }
 
-.contact-info p,
-.contact-info ul {
+#contact-info p,
+#contact-info ul {
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
 }
 
-.contact-info h2 {
+#contact-info h2 {
   padding: 18px 0;
 }
 
-.contact-info-list {
+#contact-info-list {
   display: block;
   margin: 20px 2.5rem;
 }
 
-.contact-info-list ul li {
+#contact-info-list ul li {
   display: list-item;
   margin-left: 2rem;
 }
 
-footer {
+footer {  
   justify-content: flex-start;
   border: 2px solid #000;
   padding: 0.5rem;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 4rem;
+}
+
+.hide-section {
+  display: none;
+}
+
+.show-section {
+  display: flex;
+  flex-direction: column;
 }
