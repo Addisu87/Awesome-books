@@ -79,6 +79,7 @@ a {
   justify-content: space-between;
   align-items: baseline;
   padding: 10px;
+  overflow-x: auto;
 }
 
 .book:nth-child(odd) {
@@ -135,27 +136,24 @@ form #add-btn {
   align-self: flex-end;
 }
 
+/* contact-info */
 #contact-info {
-  justify-content: space-between;
-}
-
-#contact-info p,
-#contact-info ul {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
+  padding: 0 50px;
 }
 
 #contact-info h2 {
   padding: 18px 0;
 }
 
-#contact-info-list {
-  display: block;
-  margin: 20px 2.5rem;
+#contact-info p,
+#contact-info ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+
+  padding: 10px 0;
 }
 
-#contact-info-list ul li {
-  display: list-item;
+#contact-info-list {
   margin-left: 2rem;
 }
 
