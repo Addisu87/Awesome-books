@@ -13,12 +13,21 @@
       <div class="logo"><span>Awesome Books</span></div>
       <nav class="nav-links">
         <ul>
-          <li class="nav-link"><a href="#book-list" class="nav-a" id="list-link"> List</a></li>
-          <li class="nav-link"><a href="#add-new-book" class="nav-a" id="add-link">Add new</a></li>
-          <li class="nav-link"><a href="#contact-info" class="nav-a" id="contact-link">Contact</a></li>
+          <li class="nav-link">
+            <a href="#book-list" class="nav-a" id="list-link"> List</a>
+          </li>
+          <li class="nav-link">
+            <a href="#add-new-book" class="nav-a" id="add-link">Add new</a>
+          </li>
+          <li class="nav-link">
+            <a href="#contact-info" class="nav-a" id="contact-link">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
+
+    <!-- date -->
+    <div id="dateTime"></div>
 
     <!-- Book List -->
     <main id="book-list" class="hide-section">
@@ -39,12 +48,7 @@
         required
       />
       <input id="author-input" type="text" placeholder="Author" required />
-      <input
-        id="add-btn"
-        class="btn add-btn hide"
-        type="submit"
-        value="Add"
-      />
+      <input id="add-btn" class="btn add-btn hide" type="submit" value="Add" />
     </form>
 
     <!-- Contact Info -->

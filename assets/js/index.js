@@ -4,7 +4,12 @@ const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-container');
 const addBtn = document.getElementById('add-btn');
 
-//navigation
+const dateTime = document.getElementById('dateTime');
+// date format
+const today = new Date();
+dateTime.innerHTML = today.toLocaleString();
+
+// navigation
 const links = document.querySelectorAll('.nav-a');
 
 // Prevent Form from Submit
@@ -82,20 +87,25 @@ class Book {
   }
 }
 
-{/* Single Page Application */}
+/* Single Page Application */
+
 function showThisSection(link) {
   links.forEach((lk) => {
-    if(
+    if (
       link.getAttribute('href') === lk.getAttribute('href') &&
       !link.classList.contains('highlight-link')
-      ) {
-      document.getElementById(lk.getAttribute('href').replace('#', '')).classList.toggle('show-section');
+    ) {
+      document
+        .getElementById(lk.getAttribute('href').replace('#', ''))
+        .classList.toggle('show-section');
       lk.classList.toggle('highlight-link');
     } else if (
       link.getAttribute('href') !== lk.getAttribute('href') &&
       lk.classList.contains('highlight-link')
     ) {
-      document.getElementById(lk.getAttribute('href').replace('#', '')).classList.toggle('show-section');
+      document
+        .getElementById(lk.getAttribute('href').replace('#', ''))
+        .classList.toggle('show-section');
       lk.classList.toggle('highlight-link');
     }
   });
@@ -114,11 +124,10 @@ addBtn.addEventListener('click', () => {
   }
 });
 
-links.forEach((link, i) => {
+links.forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     showThisSection(link);
-    if(i = 1) titleBookInput.focus();
   });
 });
 

@@ -4,9 +4,24 @@
   padding: 0;
 }
 
-/* Common Syles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Common Styles */
 a {
   text-decoration: none;
+}
+
+#dateTime {
+  align-self: flex-end;
+  margin: 1rem;
 }
 
 .header-1 {
@@ -14,25 +29,12 @@ a {
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  margin-top: 1.5rem;
 }
 
 .btn {
   font-size: 16px;
   font-weight: bold;
   padding: 8px;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  min-height: 100vh;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Nav-Bar */
@@ -64,7 +66,7 @@ body {
   margin: 0.5rem 0;
 }
 
-.nav-link a{
+.nav-link a {
   padding: 0.5rem;
 }
 
@@ -78,6 +80,10 @@ body {
   font-weight: bold;
   text-shadow: 0 0 5px rgba(45, 255, 234, 0.967);
   text-decoration: underline overline solid rgb(145, 14, 252) 5px;
+}
+
+main {
+  margin-top: 8rem;
 }
 
 /* Book List */
@@ -111,19 +117,19 @@ body {
 }
 
 .book-title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 24px;
   font-weight: bold;
   word-break: break-all;
 }
 
 .by {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 18px;
 }
 
 .book-author {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 22px;
   word-break: break-all;
 }
@@ -163,9 +169,8 @@ form input {
 
 #contact-info p,
 #contact-info ul {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: large;
-
   padding: 10px 0;
 }
 
@@ -177,8 +182,8 @@ form input {
 footer {
   border: 2px solid #000;
   padding: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 4rem;
+  font-family: inherit;
+  margin-top: 16rem;
 }
 
 /* Hide/Show Toggle Class */
