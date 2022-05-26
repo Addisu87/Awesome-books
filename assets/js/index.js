@@ -1,7 +1,7 @@
 const titleBookInput = document.getElementById('title-input');
 const authorBookInput = document.getElementById('author-input');
 const bookForm = document.getElementsByTagName('form')[0];
-const bookList = document.getElementById('book-list');
+const bookList = document.getElementById('book-container');
 const addBtn = document.getElementById('add-btn');
 
 //navigation

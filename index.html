@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!-- Nav-Bar -->
     <header id="header">
       <div class="logo"><span>Awesome Books</span></div>
       <nav class="nav-links">
         <ul>
-          <li class="nav-link"><a href="#book-section" class="nav-a" id="list-link"> List</a></li>
-          <li class="nav-link"><a href="#book-form" class="nav-a" id="add-link">Add new</a></li>
+          <li class="nav-link"><a href="#book-list" class="nav-a" id="list-link"> List</a></li>
+          <li class="nav-link"><a href="#add-new-book" class="nav-a" id="add-link">Add new</a></li>
           <li class="nav-link"><a href="#contact-info" class="nav-a" id="contact-link">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="book-section" class="hide-section">
+    <!-- Book List -->
+    <main id="book-list" class="hide-section">
       <h1 class="header-1">All Awesome books</h1>
-      <section id="book-list">
+      <section id="book-container">
         <!-- Content here is added from javaScript -->
       </section>
     </main>
 
-    <form id="book-form" class="hide-section">
+    <!-- Add New Book -->
+    <form id="add-new-book" class="hide-section">
       <h2 class="header-1">Add a new book</h2>
       <input
         id="title-input"
@@ -44,6 +47,7 @@
       />
     </form>
 
+    <!-- Contact Info -->
     <div id="contact-info" class="hide-section">
       <h2 class="header-1">Contact Information</h2>
       <p>
@@ -57,6 +61,7 @@
       </ul>
     </div>
 
+    <!-- Footer -->
     <footer>
       <div>
         <p>Copyright ...</p>
