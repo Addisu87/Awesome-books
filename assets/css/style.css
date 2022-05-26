@@ -5,11 +5,14 @@
 }
 
 body {
-  display: block;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100vh;
   max-width: 700px;
-  margin: 2rem auto;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -20,6 +23,7 @@ body {
   width: 100%;
   border: 2px solid #000;
   padding: 0.5em;
+  box-shadow: 0 0 20px rgba(43, 39, 48, 0.721);
 }
 
 .logo {
@@ -66,6 +70,8 @@ a {
 #book-list {
   border: 2px solid black;
   margin-top: 1rem;
+  max-height: 350px;
+  overflow: auto;
 }
 
 .book {
@@ -127,6 +133,10 @@ form input {
 form #add-btn {
   display: flex;
   align-self: flex-end;
+}
+
+#contact-info {
+  justify-content: space-between;
 }
 
 #contact-info p,
