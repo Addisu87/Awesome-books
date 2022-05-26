@@ -127,10 +127,11 @@ addBtn.addEventListener('click', () => {
   }
 });
 
-links.forEach((link) => {
+links.forEach((link, i) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     showThisSection(link);
+    if (i === 1) titleBookInput.focus();
   });
 });
 
