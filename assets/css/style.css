@@ -20,6 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   border: 2px solid #000;
   padding: 0.5em;
@@ -34,17 +35,20 @@ body {
 
 .nav-links ul {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   list-style-type: none;
 }
 
-.nav-links ul li {
-  padding-right: 0.5rem;
+.nav-link {
+  margin: 0.5rem 0;
+}
+
+.nav-link a{
+  padding: 0.5rem;
 }
 
 #add-link {
-  padding: 0.5rem;
   border-left: 2px solid #000;
   border-right: 2px solid #000;
 }
@@ -77,9 +81,8 @@ a {
 .book {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  flex-wrap: wrap;
   padding: 10px;
-  overflow-x: auto;
 }
 
 .book:nth-child(odd) {
@@ -92,14 +95,17 @@ a {
 
 .book-details {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .book-title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: bold;
+  
+  word-break: break-all;
 }
 
 .by {
@@ -110,6 +116,8 @@ a {
 .book-author {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 22px;
+  
+  word-break: break-all;
 }
 
 .btn {
@@ -118,6 +126,12 @@ a {
   padding: 8px;
 }
 
+.remove-btn {
+  align-self: center;
+  word-break: break-all;
+}
+
+/* Form */
 form {
   flex-direction: column;
   width: 70%;
