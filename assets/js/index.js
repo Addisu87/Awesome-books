@@ -1,14 +1,27 @@
 const titleBookInput = document.getElementById('title-input');
 const authorBookInput = document.getElementById('author-input');
 const bookForm = document.getElementsByTagName('form')[0];
-const bookList = document.getElementById('book-list');
+const bookList = document.getElementById('book-container');
 const addBtn = document.getElementById('add-btn');
+
+const dateTime = document.getElementById('dateTime');
+
+// date format
+function myDate() {
+  const today = new Date();
+  dateTime.innerHTML = today.toLocaleString();
+}
+setInterval(myDate, 1000);
+
+// navigation
+const links = document.querySelectorAll('.nav-a');
 
 // Prevent Form from Submit
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault();
 });
 
+// Class
 class Book {
   constructor(id, title, author) {
     this.id = id;
@@ -20,7 +33,9 @@ class Book {
 
   // Remove a Book
   static remove() {
-    Book.booksArr = Book.booksArr.filter((book) => +book.id !== +this.parentElement.id);
+    Book.booksArr = Book.booksArr.filter(
+      (book) => +book.id !== +this.parentElement.id,
+    );
     this.parentElement.remove();
 
     Book.booksArr.forEach((book, i) => {
@@ -72,7 +87,31 @@ class Book {
       });
       Book.booksArr = bookData;
     }
+    document.getElementById('list-link').click();
   }
+}
+
+/* Single Page Application */
+function showThisSection(link) {
+  links.forEach((lk) => {
+    if (
+      link.getAttribute('href') === lk.getAttribute('href')
+      && !link.classList.contains('highlight-link')
+    ) {
+      document
+        .getElementById(lk.getAttribute('href').replace('#', ''))
+        .classList.toggle('show-section');
+      lk.classList.toggle('highlight-link');
+    } else if (
+      link.getAttribute('href') !== lk.getAttribute('href')
+      && lk.classList.contains('highlight-link')
+    ) {
+      document
+        .getElementById(lk.getAttribute('href').replace('#', ''))
+        .classList.toggle('show-section');
+      lk.classList.toggle('highlight-link');
+    }
+  });
 }
 
 // Event Listeners
@@ -88,4 +127,13 @@ addBtn.addEventListener('click', () => {
   }
 });
 
+links.forEach((link, i) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    showThisSection(link);
+    if (i === 1) titleBookInput.focus();
+  });
+});
+
+// Method to load Content
 Book.load();
