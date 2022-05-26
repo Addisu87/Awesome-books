@@ -31,7 +31,7 @@ class Book {
   // Remove a Book
   static remove() {
     Book.booksArr = Book.booksArr.filter(
-      (book) => +book.id !== +this.parentElement.id
+      (book) => +book.id !== +this.parentElement.id,
     );
     this.parentElement.remove();
 
@@ -89,20 +89,19 @@ class Book {
 }
 
 /* Single Page Application */
-
 function showThisSection(link) {
   links.forEach((lk) => {
     if (
-      link.getAttribute('href') === lk.getAttribute('href') &&
-      !link.classList.contains('highlight-link')
+      link.getAttribute('href') === lk.getAttribute('href')
+      && !link.classList.contains('highlight-link')
     ) {
       document
         .getElementById(lk.getAttribute('href').replace('#', ''))
         .classList.toggle('show-section');
       lk.classList.toggle('highlight-link');
     } else if (
-      link.getAttribute('href') !== lk.getAttribute('href') &&
-      lk.classList.contains('highlight-link')
+      link.getAttribute('href') !== lk.getAttribute('href')
+      && lk.classList.contains('highlight-link')
     ) {
       document
         .getElementById(lk.getAttribute('href').replace('#', ''))
@@ -118,7 +117,7 @@ addBtn.addEventListener('click', () => {
     const newBook = new Book(
       Book.booksArr.length,
       titleBookInput.value,
-      authorBookInput.value
+      authorBookInput.value,
     );
     newBook.Add();
     Book.clearField();
