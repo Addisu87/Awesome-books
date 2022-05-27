@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome-books</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Nav-Bar -->
+    <header id="header">
+      <div class="logo"><span>Awesome Books</span></div>
+      <nav class="nav-links">
+        <ul>
+          <li class="nav-link">
+            <a href="#book-list" class="nav-a" id="list-link"> List</a>
+          </li>
+          <li class="nav-link">
+            <a href="#add-new-book" class="nav-a" id="add-link">Add new</a>
+          </li>
+          <li class="nav-link">
+            <a href="#contact-info" class="nav-a" id="contact-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- date -->
+    <div id="dateTime"></div>
+
+    <!-- Book List -->
+    <main id="book-list" class="hide-section">
+      <h1 class="header-1">All Awesome books</h1>
+      <section id="book-container">
+        <!-- Content here is added from javaScript -->
+      </section>
+    </main>
+
+    <!-- Add New Book -->
+    <form id="add-new-book" class="hide-section">
+      <h2 class="header-1">Add a new book</h2>
+      <input
+        id="title-input"
+        type="text"
+        placeholder="Title"
+        autofocus
+        required
+      />
+      <input id="author-input" type="text" placeholder="Author" required />
+      <input id="add-btn" class="btn add-btn hide" type="submit" value="Add" />
+    </form>
+
+    <!-- Contact Info -->
+    <div id="contact-info" class="hide-section">
+      <h2 class="header-1">Contact Information</h2>
+      <p>
+        Do you have any questions or you just want to say "Hello"? <br />
+        You can reach out to us!
+      </p>
+      <ul id="contact-info-list">
+        <li>Our e-mail: addisu.haile@yahoo.com</li>
+        <li>Our phone number: +251-912912144</li>
+        <li>Our address: Piazza 13, Gondar,Ethiopia</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>
+        <p>Copyright ...</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
