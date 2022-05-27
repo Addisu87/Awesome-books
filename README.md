@@ -1,6 +1,6 @@
 # Project Name
 
-Awesome-books
+- Awesome-books
 
 > Description the project.
 
@@ -8,18 +8,16 @@ Awesome-books
 
 ## Built With
 
-- Major languages - JavaScript, CSS
-- Frameworks
-- Technologies used
+- Major languages
+  - JavaScript,
+  - CSS, and
+  - HTML5
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://addisu87.github.io/Awesome-books/)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 To get a local copy up and running follow these simple example steps.
 
