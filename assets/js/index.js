@@ -3,22 +3,17 @@ const authorBookInput = document.getElementById('author-input');
 const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-container');
 const addBtn = document.getElementById('add-btn');
+const dateTime = document.getElementById('dateTime');
 const bookCounter = document.getElementById('counter');
 
 let counter = 0;
 
-function showCounter() {
-  counter = counter + 1;
-  bookCounter.innerHTML = counter;
-  bookCounter.style.display = 'initial';
+titleBookInput.addEventListener('input', () => {
+  bookCounter.style.animation = '';
+  console.log(bookCounter.style.animation);
 }
+);
 
-function hideCounter() {
-  bookCounter.style.display = 'none';
-  counter = 0;
-}
-
-const dateTime = document.getElementById('dateTime');
 
 // date format
 function myDate() {
@@ -126,6 +121,19 @@ function showThisSection(link) {
       lk.classList.toggle('highlight-link');
     }
   });
+}
+
+// Book counter
+function showCounter() {
+  counter = counter + 1;
+  bookCounter.innerHTML = counter;
+  bookCounter.style.display = 'initial';
+  bookCounter.style.animation = 'highLightEffect 1s ease-in';
+}
+
+function hideCounter() {
+  bookCounter.style.display = 'none';
+  counter = 0;
 }
 
 // Event Listeners

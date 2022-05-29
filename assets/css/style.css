@@ -75,6 +75,7 @@ a {
   padding: 0.5rem;
 }
 
+/* Book counter */
 #counter {
   display: none;
   position: absolute;
@@ -85,7 +86,28 @@ a {
   background-color: rgb(64, 220, 105);
   color: white;
   font-weight: bolder;
-  box-shadow: 0 0 15px rgba(48, 252, 255, 0.833);
+  box-shadow: 0 0 15px rgb(48, 252, 255);
+}
+
+@keyframes highLightEffect {
+  from {
+  }
+  10% {
+    transform: scale(1.4);
+    color: black;
+  }
+  45% {
+    background-color: rgb(18, 255, 81);
+  }
+  55% {
+    transform: scale(1.4);
+    background-color: rgb(18, 255, 81);
+  }
+  65% {
+    color: black;
+  }
+  to {
+  }
 }
 
 #add-link {
@@ -213,7 +235,7 @@ footer {
   display: flex;
   flex-direction: column;
   transform: translateX(0);
-  animation: fadeEffect 0.8s;
+  animation: fadeEffect 0.5s;
 }
 
 @keyframes fadeEffect {
@@ -221,6 +243,6 @@ footer {
     transform: translateX(-150%);
   }
   to {
-    transform: translateX(1%);
+    transform: none;
   }
 }
