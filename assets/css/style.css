@@ -212,4 +212,15 @@ footer {
 .show-section {
   display: flex;
   flex-direction: column;
+  transform: translateX(0);
+  animation: fadeEffect 0.8s;
+}
+
+@keyframes fadeEffect {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(1%);
+  }
 }
