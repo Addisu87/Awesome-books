@@ -3,6 +3,20 @@ const authorBookInput = document.getElementById('author-input');
 const bookForm = document.getElementsByTagName('form')[0];
 const bookList = document.getElementById('book-container');
 const addBtn = document.getElementById('add-btn');
+const bookCounter = document.getElementById('counter');
+
+let counter = 0;
+
+function showCounter() {
+  counter = counter + 1;
+  bookCounter.innerHTML = counter;
+  bookCounter.style.display = 'initial';
+}
+
+function hideCounter() {
+  bookCounter.style.display = 'none';
+  counter = 0;
+}
 
 const dateTime = document.getElementById('dateTime');
 
@@ -123,6 +137,7 @@ addBtn.addEventListener('click', () => {
       authorBookInput.value,
     );
     newBook.Add();
+    showCounter();
     Book.clearField();
   }
 });
@@ -131,6 +146,7 @@ links.forEach((link, i) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     showThisSection(link);
+    if(i === 0) hideCounter();
     if (i === 1) titleBookInput.focus();
   });
 });

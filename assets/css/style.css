@@ -75,14 +75,17 @@ a {
   padding: 0.5rem;
 }
 
-.counter {
+#counter {
+  display: none;
   position: absolute;
   top: -22px;
   right: -2px;
   padding: 5px 10px;
   border-radius: 50%;
-  background-color: red;
+  background-color: rgb(64, 220, 105);
   color: white;
+  font-weight: bolder;
+  box-shadow: 0 0 15px rgba(48, 252, 255, 0.833);
 }
 
 #add-link {
