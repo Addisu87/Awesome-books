@@ -66,8 +66,23 @@ a {
   margin: 0.5rem 0;
 }
 
+.nav-link:nth-child(1) {  
+  padding: 0 18px;
+  position: relative;
+}
+
 .nav-link a {
   padding: 0.5rem;
+}
+
+.counter {
+  position: absolute;
+  top: -22px;
+  right: -2px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
 }
 
 #add-link {
