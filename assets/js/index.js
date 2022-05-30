@@ -10,10 +10,8 @@ let counter = 0;
 
 titleBookInput.addEventListener('input', () => {
   bookCounter.style.animation = '';
-  console.log(bookCounter.style.animation);
-}
-);
-
+  return bookCounter.style.animation;
+});
 
 // date format
 function myDate() {
@@ -43,7 +41,7 @@ class Book {
   // Remove a Book
   static remove() {
     Book.booksArr = Book.booksArr.filter(
-      (book) => +book.id !== +this.parentElement.id,
+      (book) => +book.id !== +this.parentElement.id
     );
     this.parentElement.remove();
 
@@ -104,16 +102,16 @@ class Book {
 function showThisSection(link) {
   links.forEach((lk) => {
     if (
-      link.getAttribute('href') === lk.getAttribute('href')
-      && !link.classList.contains('highlight-link')
+      link.getAttribute('href') === lk.getAttribute('href') &&
+      !link.classList.contains('highlight-link')
     ) {
       document
         .getElementById(lk.getAttribute('href').replace('#', ''))
         .classList.toggle('show-section');
       lk.classList.toggle('highlight-link');
     } else if (
-      link.getAttribute('href') !== lk.getAttribute('href')
-      && lk.classList.contains('highlight-link')
+      link.getAttribute('href') !== lk.getAttribute('href') &&
+      lk.classList.contains('highlight-link')
     ) {
       document
         .getElementById(lk.getAttribute('href').replace('#', ''))
@@ -125,7 +123,7 @@ function showThisSection(link) {
 
 // Book counter
 function showCounter() {
-  counter = counter + 1;
+  counter += 1;
   bookCounter.innerHTML = counter;
   bookCounter.style.display = 'initial';
   bookCounter.style.animation = 'highLightEffect 1s ease-in';
@@ -142,7 +140,7 @@ addBtn.addEventListener('click', () => {
     const newBook = new Book(
       Book.booksArr.length,
       titleBookInput.value,
-      authorBookInput.value,
+      authorBookInput.value
     );
     newBook.Add();
     showCounter();
@@ -154,7 +152,7 @@ links.forEach((link, i) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     showThisSection(link);
-    if(i === 0) hideCounter();
+    if (i === 0) hideCounter();
     if (i === 1) titleBookInput.focus();
   });
 });
